@@ -3,7 +3,7 @@
 class User extends CI_Controller {
   
   public function get_products() {
-    $products = $this->db->get('products');
+    $products = $this->db->get('products')->result_array();
     for ($i=0; $i<sizeof($products); $i++) {
       $product = $products[$i];
       $ratings = $this->db->get_where('product_ratings', array(
